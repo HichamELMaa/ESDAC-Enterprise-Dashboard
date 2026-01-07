@@ -1,0 +1,38 @@
+QLabel#HeaderLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;  /* Hacker Green */
+    margin-bottom: 20px;
+}
+QLabel#DashLabel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;  /* Hacker Green */
+    margin-bottom: 20px;
+}
+QLabel#student_label{
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;  /* Hacker Green */
+    margin-bottom: 20px;
+}
+QWidget {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    font-size: 14px;
+}
+QLineEdit {
+    padding: 10px;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    background-color: #3b3b3b;
+}
+QPushButton {
+    background-color: #007acc;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+QPushButton:hover {
+    background-color: #005f9e;
+}

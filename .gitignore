@@ -1,0 +1,10 @@
+# Secrets (NEVER UPLOAD)
+.env
+
+# Python Cache (Junk)
+__pycache__/
+*.pyc
+
+# IDE Settings
+.vscode/
+.idea/
