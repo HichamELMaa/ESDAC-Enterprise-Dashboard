@@ -44,8 +44,34 @@ def test_hr_data():
     else:
         print("Skipping query because connection failed.")
 
+# 4. Function that retun Data
+def fetch_employees():
+    #1. Connection
+    conn = connect_to_oracle()
 
-# 4. The "Trigger" (Cook the Meal)
+    #2. Execute the Request
+    if conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT first_name, last_name, email FROM employees FETCH FIRST 10 ROWS ONLY")
+        rows = cursor.fetchall()
+
+        # CLOSE THE DOOR BEFORE YOU LEAVE
+        cursor.close()
+        conn.close()
+
+
+        return rows
+
+    else:
+        # If connection failed, return an empty list (No data)
+        return []
+
+
+
+
+
+
+# 5. The "Trigger" (Cook the Meal)
 # Only run this if we execute the file directly
 if __name__ == "__main__":
-    test_hr_data()
+    fetch_employees()

@@ -3,6 +3,7 @@ import sys
 from PyQt6.QtWidgets import QApplication,QWidget,QVBoxLayout,QLabel,QPushButton,QLineEdit,QMessageBox
 from PyQt6.QtCore import Qt
 from PyQt6 import uic
+import customtkinter as ctk
 
 
 #Class
