@@ -2,8 +2,10 @@
 .env
 
 # Python Cache (Junk)
+.venv/
 __pycache__/
 *.pyc
+ui/_archive/
 
 # IDE Settings
 .vscode/

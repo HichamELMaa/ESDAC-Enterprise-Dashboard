@@ -2,6 +2,7 @@
 import sys 
 from PyQt6.QtWidgets import QApplication,QWidget,QVBoxLayout,QLabel,QPushButton,QLineEdit,QMessageBox
 from PyQt6.QtCore import Qt
+from ui.admin_dashboard import AdminDashboard
 
 
 #Inheritance (The "Chassis" Strategy)
@@ -43,7 +44,7 @@ class LoginWindow(QWidget): # This is the inheritance part
         if user_text.startswith("C##") and user_password == "admin123":
             QMessageBox.information(self, "Information", "ACCESS GRANTED: Success: Admin Panel Unlocked")
             # 1. Create the Dashboard (Save it to 'self' so it stays alive)
-            self.dashboard = DashboardWindow()
+            self.dashboard = AdminDashboard()
             self.dashboard.show()
             self.close()
 
