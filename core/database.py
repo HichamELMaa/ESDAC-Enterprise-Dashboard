@@ -38,7 +38,7 @@ def test_hr_data():
         cursor.execute("SELECT first_name, last_name FROM employees FETCH FIRST 5 ROWS ONLY")
         rows = cursor.fetchall()
         for row in rows:
-            print (f"Employee: {row}")
+            print(f"Empolyee: {row}")
         cursor.close()
         conn.close()
     else:
@@ -74,4 +74,4 @@ def fetch_employees():
 # 5. The "Trigger" (Cook the Meal)
 # Only run this if we execute the file directly
 if __name__ == "__main__":
-    fetch_employees()
+    test_hr_data()

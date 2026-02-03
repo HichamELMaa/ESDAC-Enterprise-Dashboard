@@ -1,7 +1,7 @@
 import sys
 import os
 import time
-from PyQt6.QtWidgets import QApplication,QMainWindow
+from PyQt6.QtWidgets import QApplication,QMainWindow,QTableWidgetItem
 from PyQt6 import uic
 
 
@@ -34,12 +34,32 @@ class AdminDashboard(QMainWindow):
         
         # 2. Call the Spy (Your Database Function)
         data = fetch_employees()
-        
+
         # 3. Check what we got
         if data:
             print("--- DATA RECEIVED ---")
-            for person in data:
-                print(person)
+
+            # 1. Create the rows 
+            self.employees_table.setRowCount(len(data))
+
+            # 2. CREATE THE COLUMNS 
+            self.employees_table.setColumnCount(3)
+            self.employees_table.setHorizontalHeaderLabels(["First Name", "Last Name", "Email"])
+
+            # 3. Start the loop
+            for row , person in enumerate(data):
+
+                # --- COLUMN 0: First Name ---
+                name_item = QTableWidgetItem(person[0])
+                self.employees_table.setItem(row, 0, name_item)
+
+                # --- COLUMN 1: Last Name ---
+                last_name_item = QTableWidgetItem(person[1])
+                self.employees_table.setItem(row, 1, last_name_item)
+
+                # --- COLUMN 2: Email ---
+                email_item = QTableWidgetItem(person[2])
+                self.employees_table.setItem(row, 2, email_item)
             
             # Update the UI Label
             self.result_lbl.setText(f"SUCCESS: Retrieved {len(data)} records.")
